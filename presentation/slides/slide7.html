@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.sidebar {
+  width: 12pt;
+  background: #FF6B9D;
+}
+.content {
+  flex: 1;
+  padding: 40pt 50pt;
+}
+h1 {
+  font-size: 36pt;
+  font-weight: bold;
+  color: #2C3E50;
+  margin: 0 0 30pt 0;
+}
+.agent {
+  margin: 18pt 0;
+}
+.agent-name {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #16A085;
+  margin: 0 0 5pt 0;
+}
+.agent-role {
+  font-size: 14pt;
+  color: #555555;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<div class="sidebar"></div>
+<div class="content">
+  <h1>核心 Agent 角色</h1>
+
+  <div class="agent">
+    <p class="agent-name">Planner Agent 規劃者</p>
+    <p class="agent-role">任務分解、依賴圖構建、資源估算、進度監控</p>
+  </div>
+
+  <div class="agent">
+    <p class="agent-name">Research Agent 研究者</p>
+    <p class="agent-role">MCP 數據獲取、數據清洗、質量驗證、數據集構建</p>
+  </div>
+
+  <div class="agent">
+    <p class="agent-name">Analysis Agent 分析者</p>
+    <p class="agent-role">調用 Skills 進行聚類、引用分析、趨勢預測、網絡分析</p>
+  </div>
+
+  <div class="agent">
+    <p class="agent-name">Reviewer Agent 審查者</p>
+    <p class="agent-role">方法論驗證、偏差檢測、可信度評估、質量控制</p>
+  </div>
+
+  <div class="agent">
+    <p class="agent-name">Writer Agent 撰寫者</p>
+    <p class="agent-role">政策叙事、報告生成、可視化、演示文稿製作</p>
+  </div>
+</div>
+</body>
+</html>

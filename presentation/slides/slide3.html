@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.sidebar {
+  width: 12pt;
+  background: #FF6B9D;
+}
+.content {
+  flex: 1;
+  padding: 40pt 50pt;
+}
+h1 {
+  font-size: 36pt;
+  font-weight: bold;
+  color: #2C3E50;
+  margin: 0 0 35pt 0;
+}
+.layer {
+  background: #F7F9FC;
+  padding: 18pt 25pt;
+  margin: 15pt 0;
+  border-left: 6pt solid #16A085;
+  border-radius: 6pt;
+}
+.layer-title {
+  font-size: 20pt;
+  font-weight: bold;
+  color: #2C3E50;
+  margin: 0 0 10pt 0;
+}
+.layer-desc {
+  font-size: 14pt;
+  color: #2D3748;
+  margin: 0;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+<div class="sidebar"></div>
+<div class="content">
+  <h1>三層架構設計</h1>
+
+  <div class="layer">
+    <p class="layer-title">Cowork Layer 協作層</p>
+    <p class="layer-desc">Planner → Research → Analysis → Reviewer → Writer</p>
+  </div>
+
+  <div class="layer">
+    <p class="layer-title">Skills Layer 技能層</p>
+    <p class="layer-desc">聚類 | 引用分析 | 趨勢預測 | 詞頻分析 | 可視化...</p>
+  </div>
+
+  <div class="layer">
+    <p class="layer-title">MCP Layer 數據接入層</p>
+    <p class="layer-desc">Patent DB | Academic Papers | GRB Database | News APIs</p>
+  </div>
+</div>
+</body>
+</html>

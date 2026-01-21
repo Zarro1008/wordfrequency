@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.sidebar {
+  width: 12pt;
+  background: #16A085;
+}
+.content {
+  flex: 1;
+  padding: 40pt 50pt;
+}
+h1 {
+  font-size: 36pt;
+  font-weight: bold;
+  color: #2C3E50;
+  margin: 0 0 30pt 0;
+}
+.phase {
+  background: #F7F9FC;
+  padding: 18pt 22pt;
+  margin: 15pt 0;
+  border-left: 6pt solid #16A085;
+  border-radius: 6pt;
+}
+.phase-title {
+  font-size: 19pt;
+  font-weight: bold;
+  color: #2C3E50;
+  margin: 0 0 8pt 0;
+}
+.phase-details {
+  font-size: 14pt;
+  color: #555555;
+  margin: 0;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+<div class="sidebar"></div>
+<div class="content">
+  <h1>實施路線圖</h1>
+
+  <div class="phase">
+    <p class="phase-title">Phase 1：基礎設施（1-2 月）</p>
+    <p class="phase-details">MCP 協議層實現、Patent 與 Academic MCP 接口、核心 Skills 開發</p>
+  </div>
+
+  <div class="phase">
+    <p class="phase-title">Phase 2：Agent 開發（2-3 月）</p>
+    <p class="phase-details">Planner、Research、Analysis Agent 實現、Agent 通信協議、簡單協作流程</p>
+  </div>
+
+  <div class="phase">
+    <p class="phase-title">Phase 3：質量與輸出（1-2 月）</p>
+    <p class="phase-details">Reviewer Agent、Writer Agent、pptx skill 集成、評估指標體系</p>
+  </div>
+
+  <div class="phase">
+    <p class="phase-title">Phase 4：驗證與優化（持續）</p>
+    <p class="phase-details">真實案例驗證、算法優化、數據源擴展</p>
+  </div>
+</div>
+</body>
+</html>
