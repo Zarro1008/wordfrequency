@@ -7,3 +7,4 @@ Sce_input.txt
 /*.txt
 node_modules/
 __pycache__/
+.claude/
