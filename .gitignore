@@ -5,3 +5,7 @@ test.js
 All_input.txt
 Sce_input.txt
 /*.txt
+node_modules/
+__pycache__/
+*.pyc
+*.pyo

@@ -1,0 +1,345 @@
+{
+  "mcp_version": "1.0",
+  "system_name": "Patent Analysis Multi-Agent System",
+  "description": "专利分析与科技预测多代理系统的 MCP 数据源配置",
+  "created_at": "2026-01-21",
+
+  "data_sources": [
+    {
+      "mcp_id": "patent_mcp",
+      "name": "Patent Database MCP",
+      "type": "database",
+      "endpoint": "mcp://patent_db",
+      "provider": "PatentsView API + Google Patents",
+      "authentication": {
+        "method": "api_key",
+        "key_env_var": "PATENT_API_KEY",
+        "refresh_token_enabled": true
+      },
+      "capabilities": [
+        "search_by_ipc",
+        "search_by_keywords",
+        "search_by_assignee",
+        "get_citations",
+        "get_legal_status",
+        "get_full_text"
+      ],
+      "rate_limits": {
+        "requests_per_minute": 60,
+        "requests_per_day": 10000,
+        "max_results_per_query": 10000,
+        "concurrent_connections": 5
+      },
+      "data_fields": {
+        "required": [
+          "patent_id",
+          "title",
+          "abstract"
+        ],
+        "optional": [
+          "claims",
+          "ipc_codes",
+          "cpc_codes",
+          "filing_date",
+          "publication_date",
+          "grant_date",
+          "applicants",
+          "inventors",
+          "citations_backward",
+          "citations_forward",
+          "legal_status",
+          "family_id"
+        ]
+      },
+      "query_examples": [
+        {
+          "name": "按 IPC 查询 AI 芯片专利",
+          "query": {
+            "ipc": ["G06N3", "H01L"],
+            "countries": ["US", "CN", "EP"],
+            "date_range": {
+              "start": "2020-01-01",
+              "end": "2025-12-31"
+            },
+            "limit": 5000
+          }
+        },
+        {
+          "name": "按关键词查询量子计算",
+          "query": {
+            "keywords": "quantum computing qubit",
+            "fields": ["title", "abstract"],
+            "countries": ["US"],
+            "limit": 1000
+          }
+        }
+      ],
+      "cache_policy": {
+        "enabled": true,
+        "ttl_seconds": 86400,
+        "cache_location": "./cache/patent_mcp"
+      }
+    },
+
+    {
+      "mcp_id": "academic_mcp",
+      "name": "Academic Papers MCP",
+      "type": "database",
+      "endpoint": "mcp://academic_db",
+      "provider": "Multi-source (PubMed, arXiv, IEEE)",
+      "authentication": {
+        "method": "institutional_access",
+        "credentials_env_var": "ACADEMIC_CREDENTIALS"
+      },
+      "capabilities": [
+        "search_by_keywords",
+        "search_by_author",
+        "search_by_affiliation",
+        "get_citations",
+        "get_full_text",
+        "get_author_profile"
+      ],
+      "rate_limits": {
+        "requests_per_minute": 30,
+        "requests_per_day": 5000,
+        "max_results_per_query": 5000
+      },
+      "data_fields": {
+        "required": [
+          "paper_id",
+          "title",
+          "abstract",
+          "authors"
+        ],
+        "optional": [
+          "publication_date",
+          "journal",
+          "doi",
+          "citations",
+          "references",
+          "keywords",
+          "mesh_terms",
+          "affiliation"
+        ]
+      },
+      "query_examples": [
+        {
+          "name": "查询神经网络硬件加速论文",
+          "query": {
+            "keywords": "neural network hardware acceleration FPGA ASIC",
+            "date_range": {
+              "start": "2020-01-01",
+              "end": "2025-12-31"
+            },
+            "sources": ["IEEE Xplore", "arXiv"],
+            "limit": 2000
+          }
+        }
+      ],
+      "cache_policy": {
+        "enabled": true,
+        "ttl_seconds": 604800,
+        "cache_location": "./cache/academic_mcp"
+      }
+    },
+
+    {
+      "mcp_id": "grb_mcp",
+      "name": "Government Research Budget MCP",
+      "type": "database",
+      "endpoint": "mcp://grb_database",
+      "provider": "National Science & Technology Database",
+      "authentication": {
+        "method": "government_credential",
+        "oauth_endpoint": "https://grb.gov.tw/oauth/token",
+        "client_id_env_var": "GRB_CLIENT_ID",
+        "client_secret_env_var": "GRB_CLIENT_SECRET"
+      },
+      "capabilities": [
+        "search_by_program",
+        "search_by_institution",
+        "search_by_researcher",
+        "get_funding_trends",
+        "get_project_outputs",
+        "get_budget_allocation"
+      ],
+      "rate_limits": {
+        "requests_per_minute": 20,
+        "requests_per_day": 2000,
+        "max_results_per_query": 1000
+      },
+      "data_fields": {
+        "required": [
+          "project_id",
+          "title",
+          "funding_amount",
+          "funding_agency"
+        ],
+        "optional": [
+          "abstract",
+          "principal_investigator",
+          "institution",
+          "start_date",
+          "end_date",
+          "research_areas",
+          "keywords",
+          "outputs_patents",
+          "outputs_papers",
+          "budget_breakdown"
+        ]
+      },
+      "privacy_policy": {
+        "sensitive_fields": [
+          "principal_investigator.contact",
+          "budget_breakdown.salaries"
+        ],
+        "anonymization": "automatic",
+        "aggregation_only": false,
+        "audit_logging": true
+      },
+      "query_examples": [
+        {
+          "name": "查询 AI 相关政府资助项目",
+          "query": {
+            "research_areas": ["人工智能", "机器学习"],
+            "funding_agency": "国家科学技术委员会",
+            "date_range": {
+              "start": "2020-01-01",
+              "end": "2025-12-31"
+            },
+            "min_funding": 1000000,
+            "limit": 500
+          }
+        }
+      ],
+      "cache_policy": {
+        "enabled": false,
+        "reason": "实时数据，不适合缓存"
+      }
+    },
+
+    {
+      "mcp_id": "news_mcp",
+      "name": "Technology News MCP",
+      "type": "api",
+      "endpoint": "mcp://news_api",
+      "provider": "NewsAPI + Google News",
+      "authentication": {
+        "method": "api_key",
+        "key_env_var": "NEWS_API_KEY"
+      },
+      "capabilities": [
+        "search_by_keywords",
+        "search_by_date_range",
+        "get_trending_topics",
+        "get_sentiment_analysis"
+      ],
+      "rate_limits": {
+        "requests_per_minute": 100,
+        "requests_per_day": 10000,
+        "max_results_per_query": 100
+      },
+      "data_fields": {
+        "required": [
+          "article_id",
+          "title",
+          "source",
+          "publication_date"
+        ],
+        "optional": [
+          "content",
+          "url",
+          "author",
+          "sentiment_score",
+          "categories"
+        ]
+      },
+      "query_examples": [
+        {
+          "name": "查询 AI 芯片新闻",
+          "query": {
+            "keywords": "AI chip semiconductor NVIDIA AMD",
+            "date_range": {
+              "start": "2025-01-01",
+              "end": "2026-01-21"
+            },
+            "language": "zh-TW",
+            "categories": ["technology", "business"],
+            "limit": 100
+          }
+        }
+      ],
+      "cache_policy": {
+        "enabled": true,
+        "ttl_seconds": 3600,
+        "cache_location": "./cache/news_mcp"
+      }
+    }
+  ],
+
+  "global_settings": {
+    "timeout_seconds": 30,
+    "retry_policy": {
+      "max_retries": 3,
+      "retry_delay_seconds": 2,
+      "exponential_backoff": true
+    },
+    "error_handling": {
+      "log_errors": true,
+      "log_file": "./logs/mcp_errors.log",
+      "alert_on_failure": true,
+      "fallback_sources": {
+        "patent_mcp": ["patent_mcp_backup"],
+        "academic_mcp": ["academic_mcp_local_cache"]
+      }
+    },
+    "monitoring": {
+      "enabled": true,
+      "metrics": [
+        "request_count",
+        "response_time",
+        "error_rate",
+        "cache_hit_rate"
+      ],
+      "dashboard_url": "http://localhost:3000/mcp-dashboard"
+    }
+  },
+
+  "agent_permissions": {
+    "Research_Agent": {
+      "allowed_mcps": [
+        "patent_mcp",
+        "academic_mcp",
+        "grb_mcp",
+        "news_mcp"
+      ],
+      "max_queries_per_hour": 500,
+      "can_write": false
+    },
+    "Analysis_Agent": {
+      "allowed_mcps": [
+        "patent_mcp",
+        "academic_mcp"
+      ],
+      "max_queries_per_hour": 100,
+      "can_write": false
+    },
+    "Planner_Agent": {
+      "allowed_mcps": ["all"],
+      "max_queries_per_hour": 50,
+      "can_write": false
+    },
+    "Reviewer_Agent": {
+      "allowed_mcps": ["all"],
+      "max_queries_per_hour": 50,
+      "can_write": false,
+      "read_only": true
+    },
+    "Writer_Agent": {
+      "allowed_mcps": ["news_mcp"],
+      "max_queries_per_hour": 20,
+      "can_write": true,
+      "write_destinations": ["./output/reports"]
+    }
+  }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.sidebar {
+  width: 12pt;
+  background: #16A085;
+}
+.content {
+  flex: 1;
+  padding: 40pt 50pt;
+}
+h1 {
+  font-size: 36pt;
+  font-weight: bold;
+  color: #2C3E50;
+  margin: 0 0 30pt 0;
+}
+.intro {
+  font-size: 16pt;
+  color: #2D3748;
+  margin: 0 0 25pt 0;
+  line-height: 1.5;
+}
+.data-source {
+  margin: 18pt 0;
+}
+.source-name {
+  font-size: 18pt;
+  font-weight: bold;
+  color: #2C3E50;
+  margin: 0 0 6pt 0;
+}
+.source-desc {
+  font-size: 14pt;
+  color: #555555;
+  margin: 0;
+  line-height: 1.4;
+}
+</style>
+</head>
+<body>
+<div class="sidebar"></div>
+<div class="content">
+  <h1>MCP Layer 數據接入層</h1>
+
+  <p class="intro">標準化協議統一多源異構數據訪問，內建快取、重試與權限控制</p>
+
+  <div class="data-source">
+    <p class="source-name">Patent MCP - 專利數據庫</p>
+    <p class="source-desc">USPTO、EPO、CNIPA、WIPO - 專利全文、引用網絡</p>
+  </div>
+
+  <div class="data-source">
+    <p class="source-name">Academic MCP - 學術論文</p>
+    <p class="source-desc">PubMed、arXiv、IEEE Xplore - 論文、作者網絡</p>
+  </div>
+
+  <div class="data-source">
+    <p class="source-name">GRB MCP - 政府研究預算</p>
+    <p class="source-desc">研究項目資助、科技政策文檔、預算分配</p>
+  </div>
+
+  <div class="data-source">
+    <p class="source-name">News MCP - 科技新聞</p>
+    <p class="source-desc">NewsAPI、Google News - 產業動態、市場趨勢</p>
+  </div>
+</div>
+</body>
+</html>
