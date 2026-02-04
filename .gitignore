@@ -8,3 +8,5 @@ Sce_input.txt
 node_modules/
 __pycache__/
 .claude/
+*.png
+*.graphml

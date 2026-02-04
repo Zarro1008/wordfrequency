@@ -1,0 +1,19 @@
+# LlamaIndex 核心
+llama-index>=0.14.0
+llama-index-core>=0.14.0
+
+# LLM 支持
+llama-index-llms-anthropic>=0.10.0  # Claude API
+
+# 图处理
+networkx>=3.0
+
+# 可选：其他 LLM
+# llama-index-llms-openai>=0.6.0  # OpenAI GPT
+
+# 可选：外部图数据库
+# llama-index-graph-stores-neo4j>=0.1.0  # Neo4j
+
+# 可选：增强功能
+# python-dotenv>=1.0.0  # 环境变量管理
+# matplotlib>=3.5.0  # 图谱可视化
