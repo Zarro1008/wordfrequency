@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #ECF0F1;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.header-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 720pt;
+  height: 60pt;
+  background: #1C2833;
+}
+.header-content {
+  position: absolute;
+  top: 15pt;
+  left: 40pt;
+}
+.header-content h2 {
+  font-size: 32pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+.content {
+  margin-top: 80pt;
+  margin-left: 40pt;
+  margin-right: 40pt;
+  width: 640pt;
+}
+.section-title {
+  background: #3498DB;
+  padding: 15pt 20pt;
+  border-radius: 8pt;
+  margin-bottom: 20pt;
+}
+.section-title h3 {
+  font-size: 20pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+.problem-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15pt;
+}
+.problem-card {
+  background: #ffffff;
+  padding: 20pt;
+  border-radius: 8pt;
+  border-left: 6pt solid #E74C3C;
+  flex: 1 1 calc(50% - 10pt);
+  min-width: 280pt;
+}
+.problem-card p {
+  font-size: 15pt;
+  color: #2C3E50;
+  margin: 0;
+  line-height: 1.5;
+}
+</style>
+</head>
+<body>
+<div class="header-bar"></div>
+<div class="header-content">
+  <h2>MCP 解決的關鍵問題</h2>
+</div>
+<div class="content">
+  <div class="section-title">
+    <h3>企業級挑戰</h3>
+  </div>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <p>各 Agent 與工具之間介面不一致</p>
+    </div>
+    <div class="problem-card">
+      <p>上下文（context）來源混亂、不可控</p>
+    </div>
+    <div class="problem-card">
+      <p>工具權限與可用性難以治理</p>
+    </div>
+    <div class="problem-card">
+      <p>不利於企業級擴充與審計（auditability）</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

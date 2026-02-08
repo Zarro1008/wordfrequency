@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #ECF0F1;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.header-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 720pt;
+  height: 60pt;
+  background: #1C2833;
+}
+.header-content {
+  position: absolute;
+  top: 15pt;
+  left: 40pt;
+}
+.header-content h2 {
+  font-size: 32pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+.content {
+  margin-top: 80pt;
+  margin-left: 40pt;
+  margin-right: 40pt;
+  width: 640pt;
+}
+.section-title {
+  background: #3498DB;
+  padding: 15pt 20pt;
+  border-radius: 8pt;
+  margin-bottom: 20pt;
+}
+.section-title h3 {
+  font-size: 20pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+.info-box {
+  background: #ffffff;
+  padding: 20pt;
+  border-radius: 8pt;
+  border-left: 6pt solid #1ABC9C;
+  margin-bottom: 15pt;
+}
+.info-box p {
+  font-size: 16pt;
+  color: #2C3E50;
+  margin: 0 0 10pt 0;
+  line-height: 1.5;
+}
+.info-box p:last-child {
+  margin-bottom: 0;
+}
+.highlight {
+  background: #1ABC9C;
+  padding: 15pt 20pt;
+  border-radius: 8pt;
+  margin-top: 15pt;
+}
+.highlight p {
+  font-size: 16pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.4;
+}
+</style>
+</head>
+<body>
+<div class="header-bar"></div>
+<div class="header-content">
+  <h2>MCP（Model Context Protocol）</h2>
+</div>
+<div class="content">
+  <div class="section-title">
+    <h3>概念說明</h3>
+  </div>
+  <div class="info-box">
+    <p><b>定義：</b>上下文與能力暴露的標準化協議</p>
+    <p><b>核心功能：</b>讓 AI Agent 以一致、可控的方式存取外部資源與工具</p>
+  </div>
+  <div class="info-box">
+    <p><b>可存取資源：</b></p>
+    <ul style="margin: 5pt 0 0 20pt; padding: 0;">
+      <li>資料庫</li>
+      <li>檔案系統</li>
+      <li>API</li>
+      <li>專用分析模組</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <p>類比：AI Agent 世界中的「USB-C 介面標準」</p>
+  </div>
+</div>
+</body>
+</html>

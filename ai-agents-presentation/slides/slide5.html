@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #ECF0F1;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.header-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 720pt;
+  height: 60pt;
+  background: #1C2833;
+}
+.header-content {
+  position: absolute;
+  top: 15pt;
+  left: 40pt;
+}
+.header-content h2 {
+  font-size: 32pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+.content {
+  margin-top: 80pt;
+  margin-left: 40pt;
+  margin-right: 40pt;
+  width: 640pt;
+}
+.section-title {
+  background: #9B59B6;
+  padding: 15pt 20pt;
+  border-radius: 8pt;
+  margin-bottom: 20pt;
+}
+.section-title h3 {
+  font-size: 20pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+.skill-levels {
+  display: flex;
+  gap: 20pt;
+}
+.skill-box {
+  flex: 1;
+  background: #ffffff;
+  padding: 25pt;
+  border-radius: 8pt;
+  border-top: 8pt solid #9B59B6;
+}
+.skill-box h4 {
+  font-size: 20pt;
+  font-weight: bold;
+  color: #9B59B6;
+  margin: 0 0 15pt 0;
+}
+.skill-box p {
+  font-size: 15pt;
+  color: #2C3E50;
+  margin: 0 0 10pt 0;
+  line-height: 1.5;
+}
+.skill-box .example {
+  font-size: 13pt;
+  color: #7F8C8D;
+  font-style: italic;
+  margin-top: 10pt;
+}
+</style>
+</head>
+<body>
+<div class="header-bar"></div>
+<div class="header-content">
+  <h2>Skills 的層級架構</h2>
+</div>
+<div class="content">
+  <div class="section-title">
+    <h3>兩大層級</h3>
+  </div>
+  <div class="skill-levels">
+    <div class="skill-box">
+      <h4>Atomic Skill</h4>
+      <p><b>原子技能</b></p>
+      <p>單一功能</p>
+      <p class="example">如：摘要、分類、比對</p>
+    </div>
+    <div class="skill-box">
+      <h4>Composite Skill</h4>
+      <p><b>組合技能</b></p>
+      <p>多個 Skill 的流程組合</p>
+      <p class="example">如：完整分析任務</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

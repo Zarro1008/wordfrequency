@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #ECF0F1;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+.header-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 720pt;
+  height: 60pt;
+  background: #1C2833;
+}
+.header-content {
+  position: absolute;
+  top: 15pt;
+  left: 40pt;
+}
+.header-content h2 {
+  font-size: 32pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+.content {
+  margin-top: 80pt;
+  margin-left: 40pt;
+  margin-right: 40pt;
+  width: 640pt;
+}
+.section-title {
+  background: #F39C12;
+  padding: 15pt 20pt;
+  border-radius: 8pt;
+  margin-bottom: 20pt;
+}
+.section-title h3 {
+  font-size: 20pt;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15pt;
+}
+.role-card {
+  background: #ffffff;
+  padding: 18pt;
+  border-radius: 8pt;
+  border-left: 6pt solid #F39C12;
+}
+.role-card h4 {
+  font-size: 16pt;
+  font-weight: bold;
+  color: #F39C12;
+  margin: 0 0 8pt 0;
+}
+.role-card p {
+  font-size: 13pt;
+  color: #2C3E50;
+  margin: 0;
+  line-height: 1.4;
+}
+</style>
+</head>
+<body>
+<div class="header-bar"></div>
+<div class="header-content">
+  <h2>典型的 Cowork 角色架構</h2>
+</div>
+<div class="content">
+  <div class="section-title">
+    <h3>五大角色</h3>
+  </div>
+  <div class="role-grid">
+    <div class="role-card">
+      <h4>Planner Agent</h4>
+      <p>任務拆解與流程規劃</p>
+    </div>
+    <div class="role-card">
+      <h4>Research Agent</h4>
+      <p>資料蒐集與驗證</p>
+    </div>
+    <div class="role-card">
+      <h4>Analysis Agent</h4>
+      <p>模型推論與分析</p>
+    </div>
+    <div class="role-card">
+      <h4>Reviewer Agent</h4>
+      <p>品質控管與批判</p>
+    </div>
+    <div class="role-card" style="grid-column: 1 / -1; max-width: 50%; margin: 0 auto;">
+      <h4>Writer Agent</h4>
+      <p>結構化輸出與敘事</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

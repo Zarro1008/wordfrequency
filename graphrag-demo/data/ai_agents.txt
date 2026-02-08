@@ -1,0 +1,27 @@
+AI Agents 和多代理系统
+
+人工智能代理（AI Agents）是能够感知环境、做出决策并采取行动以实现特定目标的自主系统。
+
+MCP（Model Context Protocol）
+MCP 是一种标准化协议，用于让 AI Agent 以一致、可控的方式存取外部资源与工具。
+MCP 的核心目标是将模型推理与外部能力和数据来源解耦。
+MCP 解决了各 Agent 与工具之间接口不一致的问题。
+
+Skills（技能模块）
+Skills 是可被 Agent 呼叫的原子级或组合级能力。
+Skills 具有明确的输入输出、可测试、可重用、可被编排的特性。
+Atomic Skills 提供单一功能，如摘要、分类、比对。
+Composite Skills 是多个 Skill 的流程组合，用于完整分析任务。
+
+Cowork（协作代理）
+Cowork 指多个 Agent 之间的协作关系与分工机制。
+典型的协作角色包括：
+- Planner Agent：任务拆解与流程规划
+- Research Agent：数据搜集与验证
+- Analysis Agent：模型推论与分析
+- Reviewer Agent：品质控管与批判
+- Writer Agent：结构化输出与叙事
+
+企业级 AI 架构
+MCP 提供标准化接口，Skills 提供可重用能力，Cowork 实现智慧协作。
+三者结合构建可扩展、可治理的企业级 AI 系统。
